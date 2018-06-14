@@ -1,0 +1,245 @@
+body {
+    background-color:#000000
+}
+
+@font-face {
+    font-family: "AgencyFB-Bold";
+    src: url(font/AgencyFB-Bold.ttf) format("truetype");
+}
+@font-face {
+    font-family: "AgencyFB-Regular";
+    src: url(font/AgencyFB-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "RobotoCondensed-Regular";
+    src: url(font/RobotoCondensed-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "RobotoCondensed-Light";
+    src: url(font/RobotoCondensed-Light.ttf) format("truetype");
+}
+
+label {
+    color: #ffffff;
+    padding-left:10px;
+    width:100px;
+    display:inline-block
+}
+
+button {
+    padding: 15px;
+}
+
+.formCol {
+    margin-left: 10px;
+    float: left;
+}
+
+.formArea {
+    margin-bottom: 10px;
+}
+
+.title { 
+    font-family: "AgencyFB-Bold", Verdana, Tahoma;
+    color: #F8C804;
+    font-size: 36pt;
+    margin-top: 10px;
+}
+.robotoRegular { 
+    font-family: "RobotoCondensed-Regular", Verdana, Tahoma;
+    font-size: 30pt;
+    color: #ffffff;
+}
+.statisticName { 
+    font-family: "RobotoCondensed-Light", Verdana, Tahoma;
+    color: #cfcfcf;
+    font-size: 25pt;
+    margin-top:40px;
+}
+
+.smallStatisticName { 
+    font-family: "RobotoCondensed-Regular", Verdana, Tahoma;
+    color: #cfcfcf;
+    font-size: 12pt;
+}
+
+.rankValue {
+    font-family: "AgencyFB-Bold", Verdana, Tahoma;
+    font-size: 23pt;
+    color: #ffffff;
+}
+
+.smallRankValue {
+    font-family: "AgencyFB-Regular", Verdana, Tahoma;
+    font-size: 13pt;
+    color: #ffffff;
+    opacity: 0.5;
+    vertical-align: middle;
+}
+
+.smallestRankValue {
+    font-family: "AgencyFB-Bold", Verdana, Tahoma;
+    font-size: 12pt;
+    color: #ffffff;
+    float:right;
+    margin-right: 50px;
+}
+
+.player {
+    margin-top:17px;
+}
+
+.row {
+    float:left;
+}
+
+.rowCenter {
+    float:left;
+    margin-top:3px;
+}
+
+.rightRow {
+    float:right;
+}
+
+.underline {
+    width:fit-content;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.2);
+    float:left;
+    margin-right:43px;
+    margin-bottom:10px;
+    padding-bottom:10px;
+    margin-top: 15px;
+}
+
+.clear {
+    clear:left;
+}
+
+.leftButtonContainer {
+    position: absolute;
+    bottom: 60;
+    left: 60;
+    width:100%;
+}
+
+.RightButtonContainer {
+    position: absolute;
+    bottom: 60;
+    right: 60;
+    width:100%;
+}
+
+.button {
+    padding-left:40px;
+    padding-right:40px;
+    padding-top:5px;
+    padding-bottom:5px;
+    width:fit-content;
+    border:1px solid #ffffff;
+    font-family: "AgencyFB-Bold", Verdana, Tahoma;
+    color: #FFFFFF;
+    font-size: 18pt;
+}
+
+.buttonLeft {
+    margin-right:10px;
+    float:left;
+}
+
+.buttonRight {
+    padding-left:15px;
+    padding-right:15px;
+    float:right;
+}
+
+.scoreContainer {
+    position: absolute;
+    top: 20;
+    right: 60;
+}
+
+.score {
+    float:left;
+    font-family: "AgencyFB-Bold", Verdana, Tahoma;
+    color: #F8C804;
+    font-size: 42pt;
+}
+
+.totalPlayer {
+    float:left;
+    font-family: "AgencyFB-Regular", Verdana, Tahoma;
+    color: #C3C3C3;
+    font-size: 36pt;
+    margin-top:10px;
+    opacity: 0.5;
+}
+
+.scoreDivider {
+    margin-left:4px;
+    margin-right:1px;
+}
+
+.coin {
+    vertical-align: sub;
+    height:20px;
+    margin-left:10px;
+    margin-bottom:2px;
+}
+
+.mainContainer {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 60px;
+}
+
+.ends {
+    position: absolute;
+    font-family: "RobotoCondensed-Regular", Verdana, Tahoma;
+    color: rgba(0, 255, 255, 0.4);
+    font-size: 16pt;
+    top: 50%;
+    left: 50%;
+    margin-top: 82px;
+    margin-left: -70px;
+    text-align: center;
+}
+
+.realSS {
+    position:absolute; 
+    z-index:-99; 
+    width: 1280px;
+    height: 720px;
+}
+
+.killContainer {
+    position: absolute;
+    top: 20;
+    right: 20;
+    opacity: 0.5;
+}
+
+.killValue {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: "AgencyFB-Regular", Verdana, Tahoma;
+    font-size: 16pt;
+    color: #ffffff;
+    padding: 3px;
+    margin-right: 0px;
+}
+
+.killed {
+    background-color: rgba(0, 0, 0, 0.9);
+    font-family: "AgencyFB-Regular", Verdana, Tahoma;
+    font-size: 16pt;
+    color: #ffffff;
+    padding: 3px;
+    margin-left: 0px;
+}

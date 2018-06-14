@@ -1,264 +1,77 @@
-<style type="text/css">
-body {
-    background-color:#000000
-}
-@font-face {
-    font-family: "AgencyFB-Bold";
-    src: url(font/AgencyFB-Bold.ttf) format("truetype");
-}
-@font-face {
-    font-family: "AgencyFB-Regular";
-    src: url(font/AgencyFB-Regular.ttf) format("truetype");
-}
-@font-face {
-    font-family: "RobotoCondensed-Regular";
-    src: url(font/RobotoCondensed-Regular.ttf) format("truetype");
-}
-@font-face {
-    font-family: "RobotoCondensed-Light";
-    src: url(font/RobotoCondensed-Light.ttf) format("truetype");
-}
-.title { 
-    font-family: "AgencyFB-Bold", Verdana, Tahoma;
-    color: #F8C804;
-    font-size: 36pt;
-    margin-top: 10px;
-}
-.robotoRegular { 
-    font-family: "RobotoCondensed-Regular", Verdana, Tahoma;
-    font-size: 30pt;
-    color: #ffffff;
-}
-.statisticName { 
-    font-family: "RobotoCondensed-Light", Verdana, Tahoma;
-    color: #cfcfcf;
-    font-size: 23pt;
-    margin-top:40px;
-}
+<html >
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="dataController.js"></script>
+    <script src="html2canvas.min.js"></script>
+    <script src="imageSaver.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="pubgApp" ng-controller="dataController">
+<div class="controller">
+    <div Class="formCol">
+        <div class="formArea"><label>User Name:</label> <input type="text" ng-model="userName" placeholder="Player Name"></div>
+        <div class="formArea"><label>Total Player:</label> <input type="text" maxlength="3" ng-model="totalPlayer" placeholder="Total Player"></div>
+    </div>
 
-.smallStatisticName { 
-    font-family: "RobotoCondensed-Regular", Verdana, Tahoma;
-    color: #cfcfcf;
-    font-size: 12pt;
-}
+    <div Class="formCol">
+        <div class="formArea"><label>Killed:</label> <input type="text" maxlength="3" ng-model="killed" placeholder="Total Killed Player"></div>
+        <div class="formArea"><label>Hit Points:</label> <input type="text" ng-model="hitPoints" placeholder="Hit Points"></div>
+    </div>
+    
+    <div Class="formCol">
+        <div class="formArea"><label>Rank Points:</label> <input type="text" ng-model="rankPoints" placeholder="Rank Points"></div>
+        <div class="formArea"><label>Game Ends In:</label> <input type="text" maxlength="2" ng-model="endsIn" placeholder="Game Ends In"></div>
+    </div>
 
-.rankValue {
-    font-family: "AgencyFB-Bold", Verdana, Tahoma;
-    font-size: 23pt;
-    color: #ffffff;
-}
-
-.smallRankValue {
-    font-family: "AgencyFB-Regular", Verdana, Tahoma;
-    font-size: 13pt;
-    color: #ffffff;
-    opacity: 0.5;
-    vertical-align: middle;
-}
-
-.smallestRankValue {
-    font-family: "AgencyFB-Bold", Verdana, Tahoma;
-    font-size: 12pt;
-    color: #ffffff;
-    float:right;
-    margin-right: 50px;
-}
-
-.player {
-    margin-top:17px;
-}
-
-.row {
-    float:left;
-}
-
-.rowCenter {
-    float:left;
-    margin-top:3px;
-}
-
-.rightRow {
-    float:right;
-}
-
-.underline {
-    width:fit-content;
-    border-bottom: 1px solid rgba(170, 170, 170, 0.2);
-    float:left;
-    margin-right:43px;
-    margin-bottom:10px;
-    padding-bottom:10px;
-    margin-top: 15px;
-}
-
-.clear {
-    clear:left;
-}
-
-.leftButtonContainer {
-    position: absolute;
-    bottom: 60;
-    left: 60;
-    width:100%;
-}
-
-.RightButtonContainer {
-    position: absolute;
-    bottom: 60;
-    right: 60;
-    width:100%;
-}
-
-.button {
-    padding-left:40px;
-    padding-right:40px;
-    padding-top:5px;
-    padding-bottom:5px;
-    width:fit-content;
-    border:1px solid #ffffff;
-    font-family: "AgencyFB-Bold", Verdana, Tahoma;
-    color: #FFFFFF;
-    font-size: 18pt;
-}
-
-.buttonLeft {
-    margin-right:10px;
-    float:left;
-}
-
-.buttonRight {
-    padding-left:15px;
-    padding-right:15px;
-    float:right;
-}
-
-.scoreContainer {
-    position: absolute;
-    top: 20;
-    right: 60;
-}
-
-.score {
-    float:left;
-    font-family: "AgencyFB-Bold", Verdana, Tahoma;
-    color: #F8C804;
-    font-size: 42pt;
-}
-
-.totalPlayer {
-    float:left;
-    font-family: "AgencyFB-Regular", Verdana, Tahoma;
-    color: #C3C3C3;
-    font-size: 36pt;
-    margin-top:4px;
-    opacity: 0.5;
-}
-
-.scoreDivider {
-    margin-left:4px;
-    margin-right:1px;
-}
-
-.coin {
-    vertical-align: sub;
-    height:20px;
-    margin-left:10px;
-    margin-bottom:2px;
-}
-
-.mainContainer {
-    position: relative;
-    width: 1280px;
-    height: 720px;
-    background-color: rgba(0, 0, 0, 0.45);
-}
-
-.content {
-    width: 100%;
-    height: 100%;
-    padding-top: 30px;
-    padding-left: 60px;
-}
-
-.ends {
-    position: absolute;
-    font-family: "RobotoCondensed-Regular", Verdana, Tahoma;
-    color: rgba(0, 255, 255, 0.4);
-    font-size: 16pt;
-    top: 50%;
-    left: 50%;
-    margin-top: 82px;
-    margin-left: -70px;
-    text-align: center;
-}
-
-.realSS {
-    position:fixed; 
-    z-index:-99; 
-    width: 1280px;
-    height: 720px;
-}
-
-.killContainer {
-    position: absolute;
-    top: 20;
-    right: 20;
-    opacity: 0.5;
-}
-
-.killValue {
-    background-color: rgba(0, 0, 0, 0.5);
-    font-family: "AgencyFB-Regular", Verdana, Tahoma;
-    font-size: 16pt;
-    color: #ffffff;
-    padding: 3px;
-    margin-right: 0px;
-}
-
-.killed {
-    background-color: rgba(0, 0, 0, 0.9);
-    font-family: "AgencyFB-Regular", Verdana, Tahoma;
-    font-size: 16pt;
-    color: #ffffff;
-    padding: 3px;
-    margin-left: 0px;
-}
-
-</style>
-<body>
+    <div Class="formCol">
+        <div class="formArea"><label>Game Mode:</label> 
+            <select ng-model="selectedGameMode" ng-change="gameModeChanged()" ng-options="x for x in gameModes"></select>
+            </div>
+        <div class="formArea"><label>Language:</label> 
+            <select ng-model="selectedLanguage" ng-change="languageChanged()" ng-options="x for x in languages"></select>
+        </div>
+    </div>
+        
+    <div Class="formCol">
+        <button onclick="saveImage()">Save Image</button>
+    </div>
+    <div class="clear"></div> 
+</div>
 <div class="mainContainer" id="mainContainer">
 
     <div class="killContainer">
-        <span class="killValue">52</span><span class="killed">KILLED</span>
+        <span class="killValue">{{killed}}</span><span class="killed">{{TEXT_KILLED}}</span>
     </div>
 
     <div class="scoreContainer">
         <div class="score">#1</div>
         <div class="totalPlayer scoreDivider">/</div>
-        <div class="totalPlayer">99</div>
+        <div class="totalPlayer">{{totalPlayer}}</div>
     </div>
 
 
     <div class="leftButtonContainer">
-        <div class="button buttonLeft">REPORT</div>
-        <div class="button buttonLeft">KILLCAM</div>
+        <div class="button buttonLeft">{{TEXT_REPORT}}</div>
+        <div class="button buttonLeft">{{TEXT_KILLCAM}}</div>
     </div>
 
     <div class="rightButtonContainer">
-            <div class="button buttonRight">EXIT TO LOBBY</div>
+            <div class="button buttonRight">{{TEXT_EXIT_TO_LOBBY}}</div>
     </div>
 
     <div class="ends">
-        MATCH ENDS IN<br><span id="timeLeft">56</span>
+            {{TEXT_MATCH_ENDS_IN}}<br><span id="timeLeft">{{endsIn}}</span>
     </div>
-<img class="realSS" src="test/pubg.jpg">
+    <img class="realSS" src="test/pubg.jpg">
+    <img class="realSS" src="shadow.png">
     <div class="content">
-        <div class="robotoRegular">User Name</div>
-        <div class="title">WINNER WINNER CHICKEN DINNER!</div>
+        <div class="robotoRegular">{{userName}}</div>
+        <div class="title">{{TEXT_WINNER_WINNER_CHICKEN_DINNER}}</div>
         
         <div class="underline">
             <div class="rowCenter">
-            <span class="statisticName">TEAM RANK</span>
+            <span class="statisticName">{{TEXT_TEAM_RANK}}</span>
             </div>
             <div class="row" style="margin-top: 5px">
             <span class="rankValue">&nbsp;&nbsp;#1</span>
@@ -267,46 +80,46 @@ body {
         
         <div class="underline">
             <div class="rowCenter">
-            <span class="statisticName">KILL</span>
+            <span class="statisticName">{{TEXT_KILL}}</span>
             </div>
             <div class="row" style="margin-top: 5px">
-            <span class="rankValue">&nbsp;&nbsp;0</span>
+            <span class="rankValue">&nbsp;&nbsp;{{killed}}</span>
             </div>
             <div class="row player">
-            <span class="smallRankValue">&nbsp;players</span>
+            <span class="smallRankValue">&nbsp;{{TEXT_PLAYERS}}</span>
             </div>
         </div>
         
         <div class="row">
             <div class="underline">
                 <div class="rowCenter">
-                <span class="statisticName">REWARD</span>
+                <span class="statisticName">{{TEXT_REWARDS}}</span>
                 <img class="coin" src="coin.png" />
                 </div>
                 <div class="row" style="margin-top: 5px">
-                <span class="rankValue">&nbsp;&nbsp;180</span>
+                <span class="rankValue">&nbsp;&nbsp;{{rankPoints*1 + hitPoints*1 + killed*15}}</span>
                 </div>
             </div>
             <div class="clear"></div>
             <div class="row">
-                <span class="smallStatisticName">TEAM RANK POINTS</span>
+                <span class="smallStatisticName">{{TEXT_TEAM_RANK_POINTS}}</span>
             </div>
             <div class="rightRow">
-                <span class="smallestRankValue">&nbsp;10</span>
+                <span class="smallestRankValue">&nbsp;{{rankPoints}}</span>
             </div>
             <div class="clear"></div>
             <div class="row">
-                <span class="smallStatisticName">KILL POINTS</span>
+                <span class="smallStatisticName">{{TEXT_KILL_POINTS}}</span>
             </div>
             <div class="rightRow">
-                <span class="smallestRankValue">&nbsp;10</span>
+                <span class="smallestRankValue">&nbsp;{{killed*15}}</span>
             </div>
             <div class="clear"></div>
             <div class="row">
-                <span class="smallStatisticName">HIT POINTS</span>
+                <span class="smallStatisticName">{{TEXT_HIT_POINTS}}</span>
             </div>
             <div class="rightRow">
-                <span class="smallestRankValue">&nbsp;10</span>
+                <span class="smallestRankValue">&nbsp;{{hitPoints}}</span>
             </div>
         </div>
     
@@ -315,3 +128,4 @@ body {
     </div>
 </div>
 </body>
+</html>
