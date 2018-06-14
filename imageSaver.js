@@ -1,5 +1,5 @@
 var saveImage = function() {
     html2canvas(document.querySelector("#mainContainer")).then(canvas => {
-        document.body.appendChild(canvas)
+        Canvas2Image.saveAsPNG(canvas, 1280, 720, "png");
     });
 }
