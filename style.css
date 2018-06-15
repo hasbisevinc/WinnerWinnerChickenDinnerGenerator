@@ -30,6 +30,15 @@ button {
     padding: 15px;
 }
 
+.browserLabel {
+    width:125px;
+}
+
+.browserInput {
+    width:125px;
+    margin-left: 25px;
+}
+
 .formCol {
     margin-left: 10px;
     float: left;

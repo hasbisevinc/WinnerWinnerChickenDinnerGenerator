@@ -3,13 +3,15 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="dataController.js"></script>
-    <script src="canvas2image.js"></script>
-    <script src="html2canvas.min.js"></script>
-    <script src="imageSaver.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="pubgApp" ng-controller="dataController">
 <div class="controller">
+    <div class="formCol">
+        <div class="formArea"><label class="browserLabel">Select Screenshot:</label> </div>
+        <div class="formArea"> <input type="file" size="20" id="uploadImage" class="browserInput"></div>
+    </div>
+    
     <div Class="formCol">
         <div class="formArea"><label>User Name:</label> <input type="text" ng-model="userName" placeholder="Player Name"></div>
         <div class="formArea"><label>Total Player:</label> <input type="text" maxlength="3" ng-model="totalPlayer" placeholder="Total Player"></div>
@@ -64,7 +66,7 @@
     <div class="ends">
             {{TEXT_MATCH_ENDS_IN}}<br><span id="timeLeft">{{endsIn}}</span>
     </div>
-    <img class="realSS" src="test/pubg.jpg">
+    <img class="realSS" id="userSS" src="test/pubg.jpg">
     <img class="realSS" src="shadow.png">
     <div class="content">
         <div class="robotoRegular">{{userName}}</div>
@@ -128,5 +130,8 @@
         
     </div>
 </div>
+<script src="canvas2image.js"></script>
+<script src="html2canvas.min.js"></script>
+<script src="imageSaver.js"></script>
 </body>
 </html>
