@@ -44,7 +44,11 @@ var Canvas2Image = function () {
         }
     
         function saveFile (strData) {
-            document.location.href = strData;
+            var save_link = document.createElement('a');
+            save_link.href = strData;
+            save_link.download = "pubg.png";
+            var event = new MouseEvent('click',{"bubbles":false, "cancelable":false});
+            save_link.dispatchEvent(event);
         }
     
         function genImage(strData) {
