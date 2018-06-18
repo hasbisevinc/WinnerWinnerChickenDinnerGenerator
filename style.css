@@ -126,6 +126,7 @@ button {
 }
 
 .leftButtonContainer {
+    visibility: hidden;
     position: absolute;
     bottom: 60;
     left: 60;

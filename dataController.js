@@ -4,7 +4,7 @@ var pubgApp = angular.module("pubgApp", []);
   "use strict";
   app.controller("dataController", function($scope){
     $scope.gameModes = ["TEAM", "SINGLE"];
-    $scope.languages = ["Turkish", "English"];
+    $scope.languages = ["Turkish", "English", "German"];
 
     $scope.selectedGameMode = "TEAM";
     $scope.selectedLanguage = "English";
@@ -59,6 +59,28 @@ var pubgApp = angular.module("pubgApp", []);
             $scope.TEXT_TEAM_RANK = "SIRA";
         }
     }
+
+    $scope.changeToGerman = function () {
+        $scope.TEXT_WINNER_WINNER_CHICKEN_DINNER = "GEWINNER, GEWINNER, HÜHNCHEN-DINNER!";
+        $scope.TEXT_KILL = "KILL";
+        $scope.TEXT_PLAYERS = "Spieler";
+        $scope.TEXT_REWARDS = "BELOHNUNG";
+        $scope.TEXT_KILL_POINTS = "KILL-PUNKTE";
+        $scope.TEXT_HIT_POINTS = "TREFFERPUNKTE";
+        $scope.TEXT_MATCH_ENDS_IN = "MATCH ENDET IN";
+        $scope.TEXT_REPORT = "REPORT";
+        $scope.TEXT_KILLCAM = "KILLCAM";
+        $scope.TEXT_EXIT_TO_LOBBY = "LOBBY";
+        $scope.TEXT_KILLED = "GETöTET";
+
+        if ($scope.selectedGameMode == "TEAM") {
+            $scope.TEXT_TEAM_RANK_POINTS = "TEAM RANG PUNKTE";
+            $scope.TEXT_TEAM_RANK = "TEAM-RANG";
+        } else {
+            $scope.TEXT_TEAM_RANK_POINTS = "RANG PUNKTE";
+            $scope.TEXT_TEAM_RANK = "RANG";
+        }
+    }
     
     $scope.gameModeChanged = function () {
         $scope.updateLanguage();
@@ -74,6 +96,8 @@ var pubgApp = angular.module("pubgApp", []);
             $scope.changeToEnglish();
         } else if ($scope.selectedLanguage == "Turkish") {
             $scope.changeToTurkish();
+        } else if ($scope.selectedLanguage == "German") {
+            $scope.changeToGerman();
         }
     }
 
